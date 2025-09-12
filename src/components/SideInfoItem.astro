@@ -1,0 +1,11 @@
+---
+interface props {
+  title: string;
+  content: string;
+}
+const { title, content } = Astro.props;
+---
+<div class="flex justify-between text-zinc-500 text-sm gap-1">
+  <p class="font-bold text-zinc-400">{title}:</p>
+  <p class="">{content}</p>
+</div>
