@@ -1,13 +1,15 @@
 ---
+import avatar from "@/assets/images/face_1.jpg";
+import ListCheckItem from "@/components/ListCheckItem.astro";
+import ProgressBar from "@/components/ProgressBar.astro";
+import ProgressCircle from "@/components/ProgressCircle.astro";
+import SideInfoItem from "@/components/SideInfoItem.astro";
+import BehanceIcon from "@/icons/BehanceIcon.astro";
+import DribbbleIcon from "@/icons/DribbbleIcon.astro";
+import GitHubIcon from "@/icons/GitHubIcon.astro";
+import LinkedInIcon from "@/icons/LinkedInIcon.astro";
+import TwitterIcon from "@/icons/TwitterIcon.astro";
 import { Image } from "astro:assets";
-import avatar from "../assets/images/face_1.jpg";
-import HomeIcon from "../icons/HomeIcon.astro";
-import LibraryIcon from "../icons/LibraryIcon.astro";
-import SearchIcon from "../icons/SearchIcon.astro";
-import ProgressBar from "./ProgressBar.astro";
-import ProgressCircle from "./ProgressCircle.astro";
-import SideInfoItem from "./SideInfoItem.astro";
-import SideMenuItem from "./SideMenuItem.astro";
 ---
 
 <nav class="flex flex-col flex-1 h-full bg-[#20202a]">
@@ -58,9 +60,12 @@ import SideMenuItem from "./SideMenuItem.astro";
     </div>
     <hr class="mx-8 border-zinc-600" />
     <div class="flex flex-col justify-center items-center gap-4 px-8 py-4">
-      
+      <ListCheckItem text="git" />
+      <ListCheckItem text="github actions" />
+      <ListCheckItem text="DevOps" />
+      <ListCheckItem text="CI/CD" />
     </div>
-    <div class="bg-[#20202a] rounded-lg p-2">
+    <!-- <div class="bg-[#20202a] rounded-lg p-2">
       <ul>
         <SideMenuItem href="/">
           <HomeIcon />
@@ -79,6 +84,57 @@ import SideMenuItem from "./SideMenuItem.astro";
           Biblioteca
         </SideMenuItem>
       </ul>
+    </div> -->
+  </div>
+
+  <!-- Sección fija de iconos sociales -->
+  <div class="flex-shrink-0">
+    <div class="flex justify-between items-center gap-4 py-4 bg-[#252532fa] border-t border-zinc-700 px-8">
+      <a 
+        href="https://linkedin.com/in/lenin-huaylla" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="text-zinc-400 hover:text-blue-400 transition-colors duration-200"
+        aria-label="LinkedIn"
+      >
+        <LinkedInIcon class="w-5 h-5" />
+      </a>
+      <a 
+        href="https://dribbble.com/leninhuaylla" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="text-zinc-400 hover:text-pink-400 transition-colors duration-200"
+        aria-label="Dribbble"
+      >
+        <DribbbleIcon class="w-5 h-5" />
+      </a>
+      <a 
+        href="https://behance.net/leninhuaylla" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="text-zinc-400 hover:text-blue-500 transition-colors duration-200"
+        aria-label="Behance"
+      >
+        <BehanceIcon class="w-5 h-5" />
+      </a>
+      <a 
+        href="https://github.com/leninhuaylla" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="text-zinc-400 hover:text-white transition-colors duration-200"
+        aria-label="GitHub"
+      >
+        <GitHubIcon class="w-5 h-5" />
+      </a>
+      <a 
+        href="https://twitter.com/leninhuaylla" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="text-zinc-400 hover:text-blue-400 transition-colors duration-200"
+        aria-label="Twitter"
+      >
+        <TwitterIcon class="w-5 h-5" />
+      </a>
     </div>
   </div>
 </nav>
