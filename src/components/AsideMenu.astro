@@ -8,60 +8,77 @@ import ProgressBar from "./ProgressBar.astro";
 import ProgressCircle from "./ProgressCircle.astro";
 import SideInfoItem from "./SideInfoItem.astro";
 import SideMenuItem from "./SideMenuItem.astro";
-
 ---
 
-<nav class="flex flex-col flex-1 gap-2 h-fit bg-[#20202a]">
-  <div class="flex flex-col items-center justify-between px-2 py-6 gap-4 bg-[#252532fa]">
-    <Image src={avatar} alt="avatar" class="w-24 h-24 rounded-full object-cover" />
-    <h1 class="text-zinc-200 text-lg font-bold">Lenin Jose</h1>
-    <div class="flex flex-col items-center justify-center text-zinc-500 text-sm gap-1">
-      <p class="font-bold">INGENIERO DE SISTEMAS</p>
-      <p class="">lenin.huaylla@gmail.com</p>
-      <p class="">+51 951 084 366</p>
+<nav class="flex flex-col flex-1 h-full bg-[#20202a]">
+  <!-- Sección fija del perfil -->
+  <div class="flex-shrink-0">
+    <div
+      class="flex flex-col items-center justify-between px-2 py-6 gap-4 bg-[#252532fa]"
+    >
+      <Image
+        src={avatar}
+        alt="avatar"
+        class="w-24 h-24 rounded-full object-cover"
+      />
+      <h1 class="text-zinc-200 text-lg font-bold">Lenin Jose</h1>
+      <div
+        class="flex flex-col items-center justify-center text-zinc-500 text-sm gap-1"
+      >
+        <p class="font-bold">INGENIERO DE SISTEMAS</p>
+        <p class="">lenin.huaylla@gmail.com</p>
+        <p class="">+51 951 084 366</p>
+      </div>
     </div>
   </div>
-  <div class="flex flex-col justify-center text-zinc-500 text-sm gap-1 px-8 py-4">
-    <SideInfoItem title="Nacionalidad" content="Peruano" />
-    <SideInfoItem title="Ciudad" content="Puno, Perú" />
-    <SideInfoItem title="Edad" content="26 años" />
-    <!-- <SideInfoItem title="Ingeniero de sistemas" content="Ingeniero de sistemas con más de 5 años de experiencia en el desarrollo de software. Apasionado por la tecnología y la resolución de problemas. Siempre busco nuevas formas de mejorar mis habilidades y contribuir al éxito de los proyectos en los que trabajo." /> -->
-  </div>
-  <hr class="mx-8 border-zinc-600" />
-  <div class="flex justify-around px-8 py-4">
-    <ProgressCircle percentage={100} label="Español" />
-    <ProgressCircle percentage={80} label="Inglés" />
-    <ProgressCircle percentage={60} label="Portugués" />
-  </div>
-  <hr class="mx-8 border-zinc-600" />
-  <div class="flex flex-col justify-center items-center gap-4 px-8 py-4">
-    <ProgressBar skill="React (TS)" percentage={80} />
-    <ProgressBar skill="Angular (TS)" percentage={90} />
-    <ProgressBar skill="NestJS (TS)" percentage={80} />
-    <ProgressBar skill=".Net (C#)" percentage={90} />
-    <ProgressBar skill="Fast API (Python)" percentage={85} />
-    <ProgressBar skill="PostgreSQL" percentage={90} />
-  </div>
-  <hr class="mx-8 border-zinc-600" />
-  <div class="flex flex-col justify-center items-center gap-4 px-8 py-4"></div>
-  <div class="bg-[#20202a] rounded-lg p-2">
-    <ul>
-      <SideMenuItem href="/">
-        <HomeIcon />
-        Inicio
-      </SideMenuItem>
-      <SideMenuItem href="/#">
-        <SearchIcon />
-        Buscar
-      </SideMenuItem>
-    </ul>
-  </div>
-  <div class="bg-zinc-900 rounded-lg p-2">
-    <ul>
-      <SideMenuItem href="/#">
-        <LibraryIcon />
-        Biblioteca
-      </SideMenuItem>
-    </ul>
+
+  <div class="flex-1 overflow-y-auto flex flex-col gap-2 scrollbar-hide">
+    <div
+      class="flex flex-col justify-center text-zinc-500 text-sm gap-1 px-8 py-4"
+    >
+      <SideInfoItem title="Nacionalidad" content="Peruano" />
+      <SideInfoItem title="Ciudad" content="Puno, Perú" />
+      <SideInfoItem title="Edad" content="26 años" />
+      <!-- <SideInfoItem title="Ingeniero de sistemas" content="Ingeniero de sistemas con más de 5 años de experiencia en el desarrollo de software. Apasionado por la tecnología y la resolución de problemas. Siempre busco nuevas formas de mejorar mis habilidades y contribuir al éxito de los proyectos en los que trabajo." /> -->
+    </div>
+    <hr class="mx-8 border-zinc-600" />
+    <div class="flex justify-around px-8 py-4">
+      <ProgressCircle percentage={100} label="Español" />
+      <ProgressCircle percentage={80} label="Inglés" />
+      <ProgressCircle percentage={60} label="Portugués" />
+    </div>
+    <hr class="mx-8 border-zinc-600" />
+    <div class="flex flex-col justify-center items-center gap-4 px-8 py-4">
+      <ProgressBar skill="React (TS)" percentage={80} />
+      <ProgressBar skill="Angular (TS)" percentage={90} />
+      <ProgressBar skill="NestJS (TS)" percentage={80} />
+      <ProgressBar skill=".Net (C#)" percentage={90} />
+      <ProgressBar skill="Fast API (Python)" percentage={85} />
+      <ProgressBar skill="PostgreSQL" percentage={90} />
+    </div>
+    <hr class="mx-8 border-zinc-600" />
+    <div class="flex flex-col justify-center items-center gap-4 px-8 py-4">
+      
+    </div>
+    <div class="bg-[#20202a] rounded-lg p-2">
+      <ul>
+        <SideMenuItem href="/">
+          <HomeIcon />
+          Inicio
+        </SideMenuItem>
+        <SideMenuItem href="/#">
+          <SearchIcon />
+          Buscar
+        </SideMenuItem>
+      </ul>
+    </div>
+    <div class="bg-zinc-900 rounded-lg p-2">
+      <ul>
+        <SideMenuItem href="/#">
+          <LibraryIcon />
+          Biblioteca
+        </SideMenuItem>
+      </ul>
+    </div>
   </div>
 </nav>
