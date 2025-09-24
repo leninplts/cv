@@ -1,5 +1,6 @@
 ---
-import AsideMenu from "@/components/AsideMenu.astro";
+import AsideMenu from "@/components/aside/AsideMenu.astro";
+import MainContent from "@/components/main/MainContent.astro";
 
 ---
 
@@ -8,9 +9,12 @@ import AsideMenu from "@/components/AsideMenu.astro";
 	<aside class="[grid-area:aside] rounded-lg flex-col flex overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
 		<AsideMenu />
 	</aside>
-	<main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto">
-		Main
+	<main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto text-zinc-100">
+		<MainContent />
 	</main>
+	<aside class="[grid-area:right_aside] rounded-lg bg-zinc-600 overflow-y-auto text-zinc-100">
+		Main
+	</aside>
 	<footer class="[grid-area:player] bg-gray-500">
 		Footer
 	</footer>
@@ -31,9 +35,9 @@ import AsideMenu from "@/components/AsideMenu.astro";
 		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 		display: grid;
 		grid-template-areas:
-			'aside main main'
-			'player player player';
-		grid-template-columns: 350px 1fr 1fr;
+			'aside main main right_aside'
+			'player player player player';
+		grid-template-columns: 290px 1fr 1fr 50px;
 		grid-template-rows: 1fr auto;
 	}
 </style>

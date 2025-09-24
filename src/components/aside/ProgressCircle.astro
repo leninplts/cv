@@ -5,7 +5,7 @@ export interface Props {
   size?: number;
 }
 
-const { percentage, label, size = 80 } = Astro.props;
+const { percentage, label, size = 60 } = Astro.props;
 const radius = (size - 8) / 2;
 const circumference = 2 * Math.PI * radius;
 const strokeDasharray = circumference;
@@ -25,7 +25,7 @@ const strokeDashoffset = circumference - (percentage / 100) * circumference;
         cx={size / 2}
         cy={size / 2}
         r={radius}
-        stroke="#374151"
+        stroke="#f0b100"
         stroke-width="4"
         fill="transparent"
         class="opacity-20"
@@ -44,9 +44,9 @@ const strokeDashoffset = circumference - (percentage / 100) * circumference;
     </svg>
     <!-- Porcentaje en el centro -->
     <div class="absolute inset-0 flex items-center justify-center">
-      <span class="text-zinc-400 text-lg">{percentage}%</span>
+      <span class="text-zinc-300">{percentage}%</span>
     </div>
   </div>
   <!-- Label debajo -->
-  <span class="text-zinc-400 text-sm">{label}</span>
+  <span class="text-zinc-300 text-sm">{label}</span>
 </div>

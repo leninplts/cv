@@ -1,0 +1,42 @@
+---
+export interface Props {
+  stats?: Array<{
+    number: string;
+    label: string;
+    highlight?: boolean;
+  }>;
+}
+
+const {
+  stats = [
+    { number: "10", label: "Years Experience", highlight: true },
+    { number: "143", label: "Completed Projects" },
+    { number: "114", label: "Happy Customers" },
+    { number: "20", label: "Honors and Awards", highlight: true }
+  ]
+} = Astro.props;
+---
+
+<section class="bg-gray-900 py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {stats.map((stat) => (
+        <div class="text-center">
+          <div class="flex items-center justify-center mb-2">
+            <span class={`text-4xl md:text-5xl font-bold ${
+              stat.highlight ? 'text-yellow-400' : 'text-white'
+            }`}>
+              {stat.number}
+            </span>
+            {stat.highlight && (
+              <span class="text-yellow-400 text-3xl md:text-4xl font-bold ml-1">+</span>
+            )}
+          </div>
+          <p class="text-gray-300 text-sm md:text-base font-medium tracking-wide">
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

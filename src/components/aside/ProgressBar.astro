@@ -5,14 +5,14 @@ export interface Props {
   color?: string;
 }
 
-const { skill, percentage, color = "#fbbf24" } = Astro.props;
+const { skill, percentage, color = "#f0b100" } = Astro.props;
 ---
 
 <div class="w-full">
   <!-- Header con skill y porcentaje -->
   <div class="flex justify-between items-center mb-2">
-    <span class="text-zinc-400 text-sm font-medium">{skill}</span>
-    <span class="text-zinc-400 text-sm">{percentage}%</span>
+    <span class="text-zinc-300 text-sm font-medium">{skill}</span>
+    <span class="text-zinc-300 text-sm">{percentage}%</span>
   </div>
   
   <!-- Barra de progreso -->

@@ -1,11 +1,56 @@
 @import "tailwindcss";
 
-/* Ocultar scrollbar pero mantener funcionalidad */
-.scrollbar-hide {
+/* Ocultar scrollbar globalmente en todo el proyecto */
+* {
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
 }
 
-.scrollbar-hide::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
+
+/* También aplicar a html y body */
+html, body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Clase específica para casos donde necesites scrollbar visible */
+.scrollbar-visible {
+  -ms-overflow-style: auto !important;
+  scrollbar-width: auto !important;
+}
+
+.scrollbar-visible::-webkit-scrollbar {
+  display: block !important;
+  width: 8px !important;
+}
+
+.scrollbar-visible::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+
+.scrollbar-visible::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 4px !important;
+}
+
+.scrollbar-visible::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
+}
+
+/* Mantener la clase original para compatibilidad */
+/* .scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+} */
